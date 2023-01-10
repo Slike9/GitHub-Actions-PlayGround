@@ -27,13 +27,13 @@ jobs:
         run: bundle install
         working-directory: rubocop
       - name: Run rubocop
-        # uses: reviewdog/action-rubocop@v1
-        uses: Slike9/action-rubocop@fix-rdjson-formatter-original-output
+        uses: reviewdog/action-rubocop@master
+        # uses: Slike9/action-rubocop@fix-rdjson-formatter-original-output
         with:
           workdir: rubocop
           fail_on_error: true
           # reporter: github-check
-          # reporter: github-pr-review
-          reporter: github-pr-check
+          reporter: github-pr-review
+          # reporter: github-pr-check
           github_token: ${{ secrets.github_token }}
 
